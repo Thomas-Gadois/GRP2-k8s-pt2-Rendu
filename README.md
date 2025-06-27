@@ -40,7 +40,8 @@ Verrification du changement et récupération de l’ip externe du service :
 kubectl get svc argocd-server -n argocd
 ```
 
-![image.png](attachment:ec651d7e-feb4-45e3-8107-f7465ba662f5:image.png)
+![image (3)](https://github.com/user-attachments/assets/c0031054-7722-4b3c-a204-68ce690cb774)
+
 
 ```bash
 https://aa88b4a36778a48f49818c945fbc8ccb-33358181.us-east-1.elb.amazonaws.com/applications
@@ -56,7 +57,8 @@ get secret argocd-initial-admin-secret \
 
 Connexion au service avec l’ip externe et le mot de passe :
 
-![image.png](attachment:6e5e4a53-5728-47c2-b845-1cdafa95865a:image.png)
+![image (4)](https://github.com/user-attachments/assets/16cc6759-fd69-4aaa-87b7-76161cc321ca)
+
 
 ---
 
@@ -74,7 +76,8 @@ Verrification du déploiment du service :
 kubectl get svc ingress-nginx-controller -n ingress-ngninx
 ```
 
-![image.png](attachment:cd8a537f-3f01-4489-bbcd-9f964fc58d8e:image.png)
+![image (5)](https://github.com/user-attachments/assets/63a0cfb6-61f8-4416-a0ab-9164e68ef258)
+
 
 Création de l’application hello-k8s : 
 
@@ -92,9 +95,10 @@ Verrification du déploiment de l'application :
 kubectl get pods,svc -n ingress-ngninx
 ```
 
-![image.png](attachment:b7bb1e0b-3023-4816-8440-da892d7e02ce:image.png)
+![image (6)](https://github.com/user-attachments/assets/17b792dc-42a4-4971-b5b2-10f1d6ea03a7)
 
-![image.png](attachment:b9c9f84f-80ee-4bd3-a454-9228c560e849:image.png)
+![image (7)](https://github.com/user-attachments/assets/b20c5f10-7350-4b76-a595-887dedb41635)
+
 
 Fichier du déploiment de l’application :
 
@@ -185,6 +189,7 @@ Vérification de la page avec l’url de l’ingress :
 http://a372728969e5144ca86a0499e4cfe11c-706910546.us-east-1.elb.amazonaws.com/
 ```
 
-![image.png](attachment:86193405-9fa1-4903-8145-49760b2e5396:image.png)
+![image (8)](https://github.com/user-attachments/assets/a9cff575-8946-4834-9c79-151e1d00e052)
 
-![image.png](attachment:53731e09-f3f3-4b43-851e-eac9eb9cf94a:image.png)
+![image (9)](https://github.com/user-attachments/assets/dda53c43-f27c-4c08-ac18-6100d0298824)
+
