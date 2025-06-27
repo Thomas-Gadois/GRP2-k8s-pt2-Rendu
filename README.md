@@ -24,7 +24,8 @@ Verrification du fonctionnement des pods :
 kubectl get pods -n argocd
 ```
 
-![image.png](attachment:46a62695-5940-4588-bc7f-39db00f9e91b:image.png)
+![image (2)](https://github.com/user-attachments/assets/475571e0-074a-43df-b6bc-92f54b26381c)
+
 
 Passer le service argocd-server en mode LoadBalancer :
 
