@@ -237,3 +237,137 @@ https://github.com/user-attachments/assets/801aa7b1-e88c-4ec2-90f8-6ee02ca486fa
 ---
 
 ## Ajout d’un certificat Let’s Encrypt à l’application déployée
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+## Illustration HPA
+
+**Déploiement de l'application en exemple :** https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+
+```
+kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
+```
+
+```bash
+#php-apache.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: registry.k8s.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
+
+```
+
+![image (17)](https://github.com/user-attachments/assets/2f75e2e2-941f-4545-8c6c-e178fcac07d3)
+
+Vérifiez le déploiement :
+
+```
+kubectl get pods -l app=php-apache
+```
+
+![image (18)](https://github.com/user-attachments/assets/0d940e55-d0ab-4722-b59c-99929d19136a)
+![image (19)](https://github.com/user-attachments/assets/c020d61e-c96f-43b5-8da3-1cf1af97e0a6)
+
+Configurez l'autoscaler pour cibler 50% d'utilisation CPU :
+
+```
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+```
+
+Verrifier le déploiment de l’autosacler : 
+
+```bash
+kubectl get hpa
+```
+
+![image (20)](https://github.com/user-attachments/assets/b3981c3b-38de-41fe-8173-255faab6742e)
+![image (21)](https://github.com/user-attachments/assets/f5c89776-9ee4-4fc9-977c-98310606d175)
+
+Génération de charge pour tester le scaling
+
+```bash
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- \
+  /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+```
+
+![image (22)](https://github.com/user-attachments/assets/d99b8d71-6b0b-4b07-b6e4-66b91fcd2b11)
+![image (23)](https://github.com/user-attachments/assets/d1d10e59-5ecc-4b96-9e43-7f1aac54ef93)
+
+### Monitoring en temps réel
+
+```
+kubectl get hpa php-apache --watch
+```
+
+![image (24)](https://github.com/user-attachments/assets/b499cb3f-1de2-4b6d-ab4a-1f8a628a0937)
+
+```
+kubectl get deployment php-apache
+```
+
+![image (25)](https://github.com/user-attachments/assets/03d8d140-8999-48ee-b55c-e516df5392b7)
+
+```
+kubectl get hpa php-apache --watch
+```
+
+![image (26)](https://github.com/user-attachments/assets/b48ab40d-6a58-44c3-90f1-06e8404a24c9)
+
+---
+
+## Déploiement d’une image depuis un registre privé
+
+---
+
+## Service Mesh avec Istio
+
+---
+
+## Application onlineboutique
+
+---
+
+## Exercice bonus : Déploiement d’un stack d’observabilité
