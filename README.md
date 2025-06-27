@@ -1,7 +1,6 @@
 # GRP2-k8s-pt2-Rendu
 
 > **Membre du groupe 2 :**
-> 
 > - GADOIS Thomas
 > - ANEBAJAGAN Vivien
 > - PERROCHON Milan
