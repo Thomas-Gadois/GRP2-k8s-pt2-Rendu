@@ -191,3 +191,52 @@ http://a372728969e5144ca86a0499e4cfe11c-706910546.us-east-1.elb.amazonaws.com/
 ![image (8)](https://github.com/user-attachments/assets/a9cff575-8946-4834-9c79-151e1d00e052)
 ![image (9)](https://github.com/user-attachments/assets/dda53c43-f27c-4c08-ac18-6100d0298824)
 
+## Test des différents scénarios de résilience :
+
+### En sync manuelle :
+
+Suppression du pod hello-kubernetes :
+
+```bash
+kubectl delete service hello-kubernetes-hello-kubernetes -n hello-kubernetes
+```
+
+![image (10)](https://github.com/user-attachments/assets/e22f445d-c557-49b4-a42d-fef35ed234f7)
+
+![image (11)](https://github.com/user-attachments/assets/e79f1873-cadc-404b-8484-af09b99bf7ca)
+
+Depuis argocd l’application passe en missing :
+
+![image (12)](https://github.com/user-attachments/assets/afb7472d-05e6-419c-bd87-2c86fde57adb)
+
+La synchronisation est relancée :
+
+![image (13)](https://github.com/user-attachments/assets/939902c6-5cf5-408f-8c21-8dbd4f4c4fd1)
+
+![image (14)](https://github.com/user-attachments/assets/b7c42df7-ada1-45e7-b97c-3780c49c52e3)
+
+Une fois le service remonté, on constate que le pod est de nouveau présent : 
+
+![image (15)](https://github.com/user-attachments/assets/0d0bdb01-9763-4193-ae71-5b1f0e34852c)
+
+### En sync automatique :
+
+Configurer la Sync Policy en automatique : 
+
+![image (16)](https://github.com/user-attachments/assets/8627750d-6686-47e7-9700-b0ab98b927b9)
+
+Suppression du pod hello-kubernetes :
+
+```bash
+kubectl delete service hello-kubernetes-hello-kubernetes -n hello-kubernetes
+```
+
+Démonstration de l’auto-sync :
+
+
+https://github.com/user-attachments/assets/801aa7b1-e88c-4ec2-90f8-6ee02ca486fa
+
+
+---
+
+## Ajout d’un certificat Let’s Encrypt à l’application déployée
