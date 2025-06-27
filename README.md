@@ -8,7 +8,7 @@
 
 ---
 
-## Consignne :
+## Consignes :
 - Installation ArgoCD
 - Déployer une application via ArgoCD
 - Ajout d’un certificat Let’s Encrypt à l’application déployée précédemment
