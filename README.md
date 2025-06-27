@@ -202,7 +202,6 @@ kubectl delete service hello-kubernetes-hello-kubernetes -n hello-kubernetes
 ```
 
 ![image (10)](https://github.com/user-attachments/assets/e22f445d-c557-49b4-a42d-fef35ed234f7)
-
 ![image (11)](https://github.com/user-attachments/assets/e79f1873-cadc-404b-8484-af09b99bf7ca)
 
 Depuis argocd l’application passe en missing :
@@ -212,7 +211,6 @@ Depuis argocd l’application passe en missing :
 La synchronisation est relancée :
 
 ![image (13)](https://github.com/user-attachments/assets/939902c6-5cf5-408f-8c21-8dbd4f4c4fd1)
-
 ![image (14)](https://github.com/user-attachments/assets/b7c42df7-ada1-45e7-b97c-3780c49c52e3)
 
 Une fois le service remonté, on constate que le pod est de nouveau présent : 
