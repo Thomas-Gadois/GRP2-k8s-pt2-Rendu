@@ -8,6 +8,17 @@
 
 ---
 
+## Consignne :
+- Installation ArgoCD
+- Déployer une application via ArgoCD
+- Ajout d’un certificat Let’s Encrypt à l’application déployée précédemment
+- Illustration HPA
+- Service Mesh avec Istio
+- Application onlineboutique
+- Exercice bonus - Déploiement d’un stack d’observabilité
+
+---
+
 ## Installation ArgoCD :
 
 Commande d’installation :
