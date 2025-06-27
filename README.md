@@ -382,3 +382,5 @@ kubectl get hpa php-apache --watch
 ---
 
 ## Exercice bonus : Déploiement d’un stack d’observabilité
+
+La mise en place de la stack de monitoring Prometheus/Grafana n'est actuellement pas possible car le contrôleur EBS CSI ne dispose pas des permissions requises sur AWS.
