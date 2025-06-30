@@ -450,6 +450,96 @@ Vérrification du déploiment sur dockerhub :
 
 ## Service Mesh avec Istio
 
+Téléchargement et installation d'Istio
+
+```bash
+.\istioctl install --set profile=demo -y
+```
+
+![image.png](attachment:b4c09eaf-22dd-4cb2-86ed-758f685a9d16:image.png)
+
+Installation des composants Istio
+
+```bash
+kubectl apply -f .\samples\bookinfo\platform\kube\bookinfo.yaml
+```
+
+![image.png](attachment:d287bf1b-12db-46a8-8d2b-13dc3a02150b:image.png)
+
+![image.png](attachment:7ed632ac-e7c7-4c2f-83ed-b1b8e45736c8:image.png)
+
+Activer l’injection automatique d’Istio sur le namespace default
+
+```bash
+kubectl label namespace default istio-injection-enabled --overwrite namespace/default labeled
+```
+
+ Supprimer les pods Bookinfo pour qu’ils soient recréés avec le sidecar :
+
+![image.png](attachment:c3793c57-ef6a-451c-a87e-61537147a4cc:image.png)
+
+Déployer le Gateway pour exposer l’app :
+
+```bash
+kubectl apply -f .\samples\bookinfo\networking\bookinfo-gateway.yaml
+```
+
+![image.png](attachment:3a6783bd-eda4-4970-b770-4108c0e0901c:image.png)
+
+Vérifier le service d'entrée (Ingress Gateway Istio) :
+
+![image.png](attachment:70abda1d-8f97-4c0f-affe-d753aee1f371:image.png)
+
+Récupérer l’URL pour accéder à l’app :
+
+![image.png](attachment:7acfde06-c009-4151-b2f8-79f33273aa59:image.png)
+
+![image.png](attachment:4c2a766f-f0e2-44d0-972c-e6cee79ad1fc:image.png)
+
+Tester la répartition de trafic :
+
+![image.png](attachment:c050802a-fc8e-4d4c-91eb-314948eb8a92:image.png)
+
+![image.png](attachment:470fba6f-a26a-4e9f-b837-36057406b2e7:image.png)
+
+![image.png](attachment:427e58fe-72df-4ca8-a0a3-9892a7712e47:image.png)
+
+![image.png](attachment:89ec8870-18fc-4be4-b882-aec5c24d132e:image.png)
+
+![image.png](attachment:0213dcb6-aaf3-4f24-9a6f-4e7efa0881f5:image.png)
+
+Accecible depuis notre loadbalancer :
+
+```bash
+ http://a75e1b4ee25e94c9c80278ad208479df-742479764.us-east-1.elb.amazonaws.com/productpage
+```
+
+![image.png](attachment:cf2769be-52f8-4b8c-a2d9-77bb3f5ff52c:image.png)
+
+Répartition du trafic :
+
+![image.png](attachment:f7b71905-4f11-43e5-a4d4-cc4a7440e46c:image.png)
+
+![image.png](attachment:51b084ff-7703-463a-99d4-476067594849:image.png)
+
+Configuration du routage par défaut :
+
+![image.png](attachment:d6a685d9-586f-4a65-9e67-4f19435017d7:image.png)
+
+Check des virtuals services :
+
+![image.png](attachment:8a56e0f6-6027-4351-a649-986531b98cc9:image.png)
+
+![image.png](attachment:c429cc11-12cf-4009-904b-20b949736927:image.png)
+
+Test : 
+
+Test de l’auto healing en lancant des requettes sur hello kubernetes :
+
+![image.png](attachment:21b35249-d683-4214-95bc-3def429706c2:image.png)
+
+![image.png](attachment:8e29c870-8cd5-4be8-820a-4501c5c18d11:image.png)
+
 ---
 
 ## Exercice bonus : Déploiement d’un stack d’observabilité
