@@ -14,7 +14,6 @@
 - Ajout d’un certificat Let’s Encrypt à l’application déployée précédemment
 - Illustration HPA
 - Service Mesh avec Istio
-- Application onlineboutique
 - Exercice bonus - Déploiement d’un stack d’observabilité
 
 ---
@@ -241,9 +240,7 @@ kubectl delete service hello-kubernetes-hello-kubernetes -n hello-kubernetes
 
 Démonstration de l’auto-sync :
 
-
 https://github.com/user-attachments/assets/801aa7b1-e88c-4ec2-90f8-6ee02ca486fa
-
 
 ---
 
@@ -455,10 +452,13 @@ Vérrification du déploiment sur dockerhub :
 
 ---
 
-## Application onlineboutique
-
----
-
 ## Exercice bonus : Déploiement d’un stack d’observabilité
 
-La mise en place de la stack de monitoring Prometheus/Grafana n'est actuellement pas possible car le contrôleur EBS CSI ne dispose pas des permissions requises sur AWS.
+La mise en place de la stack de monitoring Prometheus/Grafana avec du stockage persistant n'est  pas possible car le contrôleur EBS CSI ne dispose pas des permissions requises sur AWS.
+Voici une démonstration de celle-ci sans le stockage persistant
+![image](https://github.com/user-attachments/assets/0793d291-e66b-44b0-b9ad-edfa7634e644)
+![image](https://github.com/user-attachments/assets/615d2418-5401-4669-a215-d44e1b1288e5)
+![imagesdeegfv](https://github.com/user-attachments/assets/c70852fa-2b10-4d3c-88d5-06d82a89aded)
+![image](https://github.com/user-attachments/assets/7eb0b6c9-1909-4ee6-a516-df6c7cb6c9e8)
+
+
