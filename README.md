@@ -455,10 +455,12 @@ Vérrification du déploiment sur dockerhub :
 ## Exercice bonus : Déploiement d’un stack d’observabilité
 
 La mise en place de la stack de monitoring Prometheus/Grafana avec du stockage persistant n'est  pas possible car le contrôleur EBS CSI ne dispose pas des permissions requises sur AWS.
-Voici une démonstration de celle-ci sans le stockage persistant
+
+Voici une démonstration de celle-ci sans le stockage persistant :
 ![image](https://github.com/user-attachments/assets/0793d291-e66b-44b0-b9ad-edfa7634e644)
-![image](https://github.com/user-attachments/assets/615d2418-5401-4669-a215-d44e1b1288e5)
+![image](https://github.com/user-attachments/assets/a23b06fd-058f-4ca8-a302-5a5fc1a9fc78)
 ![imagesdeegfv](https://github.com/user-attachments/assets/c70852fa-2b10-4d3c-88d5-06d82a89aded)
-![image](https://github.com/user-attachments/assets/7eb0b6c9-1909-4ee6-a516-df6c7cb6c9e8)
+![image](https://github.com/user-attachments/assets/34fad9fa-0b61-43ce-abf6-6910b63017e2)
+
 
 
