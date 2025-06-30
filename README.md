@@ -456,7 +456,7 @@ Téléchargement et installation d'Istio
 .\istioctl install --set profile=demo -y
 ```
 
-![image.png](attachment:b4c09eaf-22dd-4cb2-86ed-758f685a9d16:image.png)
+![image](https://github.com/user-attachments/assets/406beac2-5a18-4865-94aa-36483f1dcf73)
 
 Installation des composants Istio
 
@@ -464,9 +464,9 @@ Installation des composants Istio
 kubectl apply -f .\samples\bookinfo\platform\kube\bookinfo.yaml
 ```
 
-![image.png](attachment:d287bf1b-12db-46a8-8d2b-13dc3a02150b:image.png)
+![image](https://github.com/user-attachments/assets/3c85531f-239e-472f-8982-dc0c3192379d)
 
-![image.png](attachment:7ed632ac-e7c7-4c2f-83ed-b1b8e45736c8:image.png)
+![image](https://github.com/user-attachments/assets/6757eb2d-cfb1-4efe-a5df-8160cc8788d3)
 
 Activer l’injection automatique d’Istio sur le namespace default
 
