@@ -371,6 +371,84 @@ kubectl get hpa php-apache --watch
 
 ## Déploiement d’une image depuis un registre privé
 
+Depuis dockerhub, créer le répertoire privé : 
+
+![image (1)](https://github.com/user-attachments/assets/713aa6ae-7bb7-4758-a236-ef5c24f42f6c)
+
+Faire un clone de l’image hello-kubernetes
+
+```bash
+git clone https://github.com/paulbouwer/hello-kubernetes.git
+cd hello-kubernetes\src\app
+ls
+```
+
+![image (2)](https://github.com/user-attachments/assets/42945fc1-6938-49e9-85e7-a305613fae19)
+
+Lancer le build de l’image : 
+
+```bash
+docker build -t hello-kubernetes: prive
+```
+
+![image (3)](https://github.com/user-attachments/assets/6556df32-cb53-44ad-a782-e6320c4ca75f)
+
+Envoyer l’image docker dans le répo privé dans dockerhub
+
+```bash
+docker push hello-kubernetes: prive
+```
+
+![image (4)](https://github.com/user-attachments/assets/ce938f5d-83f7-47c9-84d7-1e67ee59c14e)
+
+Depuis dockerhub, créer le tocken d’acces : 
+
+![image (5)](https://github.com/user-attachments/assets/9ee211f6-400c-4901-87a2-e7e6d5a9a053)
+
+Créer le secret avec le tocken d’acces : 
+
+```bash
+kubectl create secret docker-registry regcred --docker-username=username --docker-password=ACCES_TOKEN --docker-email
+```
+
+Creation du pod avec l’image privé :
+
+```bash
+apiVersion: v1 
+kind: Pod
+metadata:
+	name: hello-kubernetes-private
+spec:
+	containers:
+	- name: hello-kubernetes
+		image: hello-kubernetes:prive 
+	imagePullSecrets:
+	- name: regcred
+```
+
+Déploiment du pod avec l’image privé :
+
+```bash
+kubectl apply -f pod-hello-private.yaml
+```
+
+Vérrification du déploiment :
+
+```bash
+kubectl get pods
+kubectl describe pod hello-kuberntes-private
+```
+
+![image (6)](https://github.com/user-attachments/assets/df798669-eee5-4eee-8a36-c4accaf6530c)
+
+![image (7)](https://github.com/user-attachments/assets/0e4a4466-65cd-45bf-9ed7-a48cde29d05a)
+
+![image (8)](https://github.com/user-attachments/assets/c6b03599-0ddc-42e6-8b49-05834e4337d1)
+
+Vérrification du déploiment sur dockerhub :
+
+![image (9)](https://github.com/user-attachments/assets/98c0a9be-e37a-45bd-a671-618af6cf6e25)
+
 ---
 
 ## Service Mesh avec Istio
