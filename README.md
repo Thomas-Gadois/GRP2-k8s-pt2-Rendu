@@ -246,17 +246,8 @@ https://github.com/user-attachments/assets/801aa7b1-e88c-4ec2-90f8-6ee02ca486fa
 
 ## Ajout d’un certificat Let’s Encrypt à l’application déployée
 
-
-
-
-
-
-
-
-
-
-
-
+![Capture4](https://github.com/user-attachments/assets/3f783de5-192a-43f6-82ff-1e9a0660f52e)
+![Capture3](https://github.com/user-attachments/assets/b6af4db5-372f-43b0-b6e8-b62f853db472)
 
 ---
 
@@ -476,7 +467,7 @@ kubectl label namespace default istio-injection-enabled --overwrite namespace/de
 
  Supprimer les pods Bookinfo pour qu’ils soient recréés avec le sidecar :
 
-![image.png](attachment:c3793c57-ef6a-451c-a87e-61537147a4cc:image.png)
+![image](https://github.com/user-attachments/assets/9a608841-905f-4a90-8b29-f5e32c47c2fd)
 
 Déployer le Gateway pour exposer l’app :
 
@@ -484,29 +475,29 @@ Déployer le Gateway pour exposer l’app :
 kubectl apply -f .\samples\bookinfo\networking\bookinfo-gateway.yaml
 ```
 
-![image.png](attachment:3a6783bd-eda4-4970-b770-4108c0e0901c:image.png)
+![image](https://github.com/user-attachments/assets/1b43d7bc-3594-462a-a64a-aebd03fecb8e)
 
 Vérifier le service d'entrée (Ingress Gateway Istio) :
 
-![image.png](attachment:70abda1d-8f97-4c0f-affe-d753aee1f371:image.png)
+![image](https://github.com/user-attachments/assets/a3cb7811-7ec8-418d-8347-e83073eb71ba)
 
 Récupérer l’URL pour accéder à l’app :
 
-![image.png](attachment:7acfde06-c009-4151-b2f8-79f33273aa59:image.png)
+![image](https://github.com/user-attachments/assets/21b3ed5f-4852-4e65-a2ef-7d4a3d112463)
 
-![image.png](attachment:4c2a766f-f0e2-44d0-972c-e6cee79ad1fc:image.png)
+![image](https://github.com/user-attachments/assets/2f97ce0c-6434-40b6-929c-8835e275eb3e)
 
 Tester la répartition de trafic :
 
-![image.png](attachment:c050802a-fc8e-4d4c-91eb-314948eb8a92:image.png)
+![image](https://github.com/user-attachments/assets/bfaa8774-f8b0-47ff-ab6d-462c538e45e0)
 
-![image.png](attachment:470fba6f-a26a-4e9f-b837-36057406b2e7:image.png)
+![image](https://github.com/user-attachments/assets/860b4ff0-943c-40b3-9276-10ff6061de35)
 
-![image.png](attachment:427e58fe-72df-4ca8-a0a3-9892a7712e47:image.png)
+![image](https://github.com/user-attachments/assets/ab8e785e-1fed-4cdb-82ca-4a1a682bdf5f)
 
-![image.png](attachment:89ec8870-18fc-4be4-b882-aec5c24d132e:image.png)
+![image](https://github.com/user-attachments/assets/1d04c245-4b95-4d7d-8c95-1121f6192256)
 
-![image.png](attachment:0213dcb6-aaf3-4f24-9a6f-4e7efa0881f5:image.png)
+![image](https://github.com/user-attachments/assets/251d8e23-c18e-458e-a3f4-63579b9b32d3)
 
 Accecible depuis notre loadbalancer :
 
@@ -514,31 +505,35 @@ Accecible depuis notre loadbalancer :
  http://a75e1b4ee25e94c9c80278ad208479df-742479764.us-east-1.elb.amazonaws.com/productpage
 ```
 
-![image.png](attachment:cf2769be-52f8-4b8c-a2d9-77bb3f5ff52c:image.png)
+![image](https://github.com/user-attachments/assets/31cd4bda-d471-4452-a5b9-085e698e9518)
 
 Répartition du trafic :
 
-![image.png](attachment:f7b71905-4f11-43e5-a4d4-cc4a7440e46c:image.png)
+![image](https://github.com/user-attachments/assets/12865ef8-23d5-4419-8c69-b461e01c4c57)
 
-![image.png](attachment:51b084ff-7703-463a-99d4-476067594849:image.png)
+![image](https://github.com/user-attachments/assets/77ad4196-861b-4b1c-b884-ee963e4cbe57)
 
 Configuration du routage par défaut :
 
-![image.png](attachment:d6a685d9-586f-4a65-9e67-4f19435017d7:image.png)
+![image](https://github.com/user-attachments/assets/bd223733-680e-4c34-b036-d0751dd33a30)
 
 Check des virtuals services :
 
-![image.png](attachment:8a56e0f6-6027-4351-a649-986531b98cc9:image.png)
+![image](https://github.com/user-attachments/assets/fe72d488-6bbd-414a-bf8f-a3cb202872ab)
 
-![image.png](attachment:c429cc11-12cf-4009-904b-20b949736927:image.png)
+![image](https://github.com/user-attachments/assets/f7c889bd-b74d-45a0-b27f-cebda668c2d4)
 
 Test : 
 
+
+https://github.com/user-attachments/assets/fd0184ff-e5c6-4a3c-9c5c-5e3d624d2fca
+
+
 Test de l’auto healing en lancant des requettes sur hello kubernetes :
 
-![image.png](attachment:21b35249-d683-4214-95bc-3def429706c2:image.png)
+![image](https://github.com/user-attachments/assets/051a69ad-f6ac-4e03-a55b-310ed691dbb5)
 
-![image.png](attachment:8e29c870-8cd5-4be8-820a-4501c5c18d11:image.png)
+![image](https://github.com/user-attachments/assets/e236d4a0-9cd1-4dba-92fe-a78608600e47)
 
 ---
 
