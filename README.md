@@ -14,6 +14,7 @@
 - Ajout d’un certificat Let’s Encrypt à l’application déployée précédemment
 - Illustration HPA
 - Service Mesh avec Istio
+- Déploiement de la boutique en ligne
 - Exercice bonus - Déploiement d’un stack d’observabilité
 
 ---
