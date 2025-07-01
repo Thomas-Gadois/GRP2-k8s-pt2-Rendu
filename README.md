@@ -246,7 +246,7 @@ https://github.com/user-attachments/assets/801aa7b1-e88c-4ec2-90f8-6ee02ca486fa
 
 ## Ajout d’un certificat Let’s Encrypt à l’application déployée
 
-![Capture](https://github.com/user-attachments/assets/2c7d638e-0f3b-4e0e-a714-67fb551a1162)
+![460742771-04a36e05-8762-4097-a938-e0b58d66bb6b](https://github.com/user-attachments/assets/c96a847b-9a4f-433c-b5ff-691a09caaa6a)
 
 ---
 
