@@ -242,6 +242,13 @@ Démonstration de l’auto-sync :
 
 https://github.com/user-attachments/assets/801aa7b1-e88c-4ec2-90f8-6ee02ca486fa
 
+### Test de l’auto healing :
+
+On suprime un pod et il est recréé automatiquement :
+
+![image](https://github.com/user-attachments/assets/e236d4a0-9cd1-4dba-92fe-a78608600e47)
+
+
 ---
 
 ## Ajout d’un certificat Let’s Encrypt à l’application déployée
@@ -353,6 +360,8 @@ kubectl get hpa php-apache --watch
 ```
 
 ![image (26)](https://github.com/user-attachments/assets/b48ab40d-6a58-44c3-90f1-06e8404a24c9)
+
+**On constate bien que le pod est scale automatiquement pour répondre a la montée en charge.**
 
 ---
 
@@ -527,12 +536,7 @@ Test :
 
 https://github.com/user-attachments/assets/fd0184ff-e5c6-4a3c-9c5c-5e3d624d2fca
 
-
-Test de l’auto healing en lancant des requettes sur hello kubernetes :
-
 ![image](https://github.com/user-attachments/assets/051a69ad-f6ac-4e03-a55b-310ed691dbb5)
-
-![image](https://github.com/user-attachments/assets/e236d4a0-9cd1-4dba-92fe-a78608600e47)
 
 ---
 
