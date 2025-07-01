@@ -559,7 +559,7 @@ argocd app create onlineboutique-gitops `
   --self-heal `
   --auto-prune
 ```
-**Dans notre cas le déploiement de l'application echoue.**
+Dans notre cas le déploiement de l'application echoue.
 ---
 
 ## Exercice bonus : Déploiement d’un stack d’observabilité
