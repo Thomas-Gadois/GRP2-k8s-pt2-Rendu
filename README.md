@@ -540,11 +540,45 @@ https://github.com/user-attachments/assets/fd0184ff-e5c6-4a3c-9c5c-5e3d624d2fca
 
 ---
 
+## Déploiement de la boutique en ligne
+
+on créé le namespace :
+```bash
+kubectl create namespace onlineboutique
+```
+puis on lance le déploiement de l'application:
+
+```bash
+argocd app create onlineboutique-gitops `
+  --repo https://github.com/GoogleCloudPlatform/microservices-demo `
+  --path release `
+  --revision HEAD `
+  --dest-server https://kubernetes.default.svc `
+  --dest-namespace onlineboutique `
+  --sync-policy automated `
+  --self-heal `
+  --auto-prune
+```
+**Dans notre cas le déploiement de l'application echoue.**
+---
+
 ## Exercice bonus : Déploiement d’un stack d’observabilité
 
 La mise en place de la stack de monitoring Prometheus/Grafana avec du stockage persistant n'est  pas possible car le contrôleur EBS CSI ne dispose pas des permissions requises sur AWS.
 
 Voici une démonstration de celle-ci sans le stockage persistant :
+
+Ajout du repo d'installation de prometheus et grafana :
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+```
+Création du namespace et installation :
+```bash
+kubectl create namespace monitoring
+helm install kube-prom-stack prometheus-community/kube-prometheus-stack \
+  --namespace monitoring
+```
 ![image](https://github.com/user-attachments/assets/0793d291-e66b-44b0-b9ad-edfa7634e644)
 ![image](https://github.com/user-attachments/assets/a23b06fd-058f-4ca8-a302-5a5fc1a9fc78)
 ![imagesdeegfv](https://github.com/user-attachments/assets/c70852fa-2b10-4d3c-88d5-06d82a89aded)
